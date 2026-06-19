@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" role="img" aria-label="Portrait placeholder for Kyle Miklinevich">
+  <defs>
+    <clipPath id="circle"><circle cx="320" cy="320" r="300"/></clipPath>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#34472A"/>
+      <stop offset="1" stop-color="#2B3B22"/>
+    </linearGradient>
+  </defs>
+
+  <!-- backing -->
+  <circle cx="320" cy="320" r="300" fill="url(#bg)"/>
+
+  <!-- silhouette (head + shoulders), clipped to the circle -->
+  <g clip-path="url(#circle)" fill="#FAF7F0" opacity="0.16">
+    <circle cx="320" cy="262" r="104"/>
+    <path d="M120 640 C120 470 200 396 320 396 C440 396 520 470 520 640 Z"/>
+  </g>
+
+  <!-- thin gold ring -->
+  <circle cx="320" cy="320" r="300" fill="none" stroke="#D4A853" stroke-width="3" opacity="0.85"/>
+  <circle cx="320" cy="320" r="288" fill="none" stroke="#FAF7F0" stroke-width="1" opacity="0.18"/>
+
+  <!-- placeholder label -->
+  <text x="320" y="566" text-anchor="middle" fill="#C9CDBB"
+        font-family="'Work Sans', -apple-system, sans-serif" font-size="20"
+        letter-spacing="3" font-weight="600">PORTRAIT</text>
+</svg>

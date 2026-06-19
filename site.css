@@ -1,0 +1,143 @@
+/* ============================================================
+   kylemiklinevich.com — shared styles
+   Commons base kit. Tokens mirror _commons/brand/commons-tokens.css.
+   ============================================================ */
+:root{
+  --forest:#2B3B22; --forest-light:#34472A; --pasture:#4A7C3F;
+  --cream:#FAF7F0; --cream-dark:#F1EADC; --gold:#D4A853; --gold-dark:#C2933F;
+  --gold-soft:#E0BC72; --earth:#3D3228;
+  --text:#2B3B22; --text-muted:#5F6450; --text-light:#95917F;
+  --on-dark:#FAF7F0; --on-dark-muted:#C9CDBB;
+  --border:#E5DDCC; --line-soft:#EFE8DA; --card:#fff;
+  --font-serif:'Lora',Georgia,'Times New Roman',serif;
+  --font-sans:'Work Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+  --fs-name:52px; --fs-heading:30px; --fs-lead:19px; --fs-body:17px;
+  --max:1180px; --measure:640px; --radius:14px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px;-webkit-font-smoothing:antialiased;scroll-behavior:smooth}
+body{font-family:var(--font-sans);color:var(--text);background:var(--cream);line-height:1.85}
+img,svg{max-width:100%;height:auto;display:block}
+a{color:var(--pasture);text-decoration:none}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 28px}
+.eyebrow{display:block;text-transform:uppercase;letter-spacing:1.8px;font-size:12px;font-weight:600;color:var(--pasture)}
+.heading{font-family:var(--font-serif);font-weight:400;font-size:var(--fs-heading);line-height:1.25;color:var(--text)}
+.body{font-size:var(--fs-body);line-height:1.9;color:var(--text-muted)}
+.lead{font-size:var(--fs-lead);line-height:1.7;color:var(--text-muted)}
+
+/* ---- header / nav ---- */
+.site-header{position:sticky;top:0;z-index:50;background:var(--forest)}
+.header-inner{max-width:var(--max);margin:0 auto;padding:0 28px;height:66px;display:flex;align-items:center;justify-content:flex-end}
+.brand{font-family:var(--font-serif);font-size:19px;font-weight:500;color:var(--on-dark);letter-spacing:.3px}
+.brand:hover{color:var(--on-dark)}
+.nav{display:flex;align-items:center;gap:28px}
+.nav a{color:var(--on-dark-muted);font-size:14px;font-weight:500;letter-spacing:.2px}
+.nav a:hover{color:var(--on-dark)}
+.nav .btn-join{margin-left:6px}
+@media(max-width:760px){.nav .nav-link{display:none}}
+
+/* ---- buttons ---- */
+.btn{display:inline-block;font-family:var(--font-sans);font-weight:600;font-size:14px;letter-spacing:.3px;padding:13px 26px;border-radius:999px;cursor:pointer;border:1px solid transparent;transition:all .15s ease;white-space:nowrap}
+.btn-gold{background:var(--gold);color:var(--forest)}
+.btn-gold:hover{background:var(--gold-dark)}
+.btn-quiet{background:transparent;border-color:var(--border);color:var(--forest)}
+.btn-quiet:hover{border-color:var(--pasture);color:var(--pasture)}
+.btn-commons{background:var(--forest);color:var(--on-dark);border-color:var(--forest)}
+.btn-commons:hover{background:var(--forest-light);border-color:var(--forest-light)}
+.btn-onforest{background:transparent;color:var(--on-dark);border-color:rgba(250,247,240,.32)}
+.btn-onforest:hover{border-color:var(--on-dark)}
+
+/* ---- split hero ---- */
+.hero-split{display:flex;min-height:560px}
+/* image is absolutely positioned so the TEXT column sets the hero height */
+.hero-media{flex:1;position:relative;background:var(--forest);overflow:hidden;min-height:440px}
+.hero-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%}
+.hero-caption{position:absolute;left:0;right:0;top:0;padding:44px 48px 70px;background:linear-gradient(to bottom,rgba(20,28,15,.92),rgba(20,28,15,0))}
+.hero-caption .name{font-family:var(--font-serif);font-weight:400;font-size:46px;line-height:1.04;color:var(--on-dark)}
+.hero-caption .role{margin-top:11px;text-transform:uppercase;letter-spacing:1.9px;font-size:12.5px;font-weight:600;color:var(--gold-soft)}
+.hero-content{flex:1;display:flex;align-items:center;padding:72px 56px;background:var(--cream)}
+.hero-content .inner{max-width:540px}
+.hero-content .hero-header{font-family:var(--font-serif);font-weight:400;font-size:38px;line-height:1.18;color:var(--text);margin-bottom:12px}
+.hero-content .intro{font-size:18px;line-height:1.7;color:var(--text-muted)}
+.hero-content .org{font-weight:600;color:var(--forest)}
+.hero-content .org-list{margin-top:26px}
+.org-item{margin-top:18px;font-size:16px;line-height:1.55}
+.org-item:first-child{margin-top:0}
+.org-item .name{display:block;font-family:var(--font-serif);font-size:18px;color:var(--forest);margin-bottom:3px}
+.org-item .desc{color:var(--text-muted)}
+.hero-content .cta-row{margin-top:36px;display:flex;gap:14px;flex-wrap:wrap}
+@media(max-width:880px){
+  .hero-split{flex-direction:column;min-height:0}
+  .hero-media{min-height:62vh}
+  .hero-content{padding:52px 28px}
+  .hero-caption .name{font-size:32px}
+}
+
+/* ---- generic section ---- */
+.band{padding:88px 0}
+.band + .band{border-top:1px solid var(--line-soft)}
+.measure{max-width:var(--measure);margin:0 auto}
+.center{text-align:center}
+.stack > * + *{margin-top:20px}
+.section-head .heading{margin-top:12px}
+
+/* ---- commons tiles ---- */
+.commons-intro{max-width:560px;margin:0 auto 48px}
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+@media(max-width:820px){.tiles{grid-template-columns:1fr;max-width:430px;margin:0 auto}}
+.tile{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:32px 28px;display:flex;flex-direction:column;transition:transform .16s ease,box-shadow .16s ease}
+.tile:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(43,59,34,.10)}
+.tile .kicker{text-transform:uppercase;letter-spacing:1.4px;font-size:11px;font-weight:600;color:var(--text-light);margin-bottom:14px}
+.tile h3{font-family:var(--font-serif);font-weight:400;font-size:21px;color:var(--forest);margin-bottom:12px}
+.tile p{font-size:15px;line-height:1.7;color:var(--text-muted);flex:1;margin-bottom:22px}
+.tile .go{font-size:13.5px;font-weight:600;color:var(--pasture);letter-spacing:.2px}
+.tile .go::after{content:" \2192";transition:margin .15s ease}
+.tile:hover .go::after{margin-left:5px}
+.weave{margin-top:46px;text-align:center}
+.weave .line{display:inline-flex;align-items:center;gap:16px;color:var(--text-light);font-size:13px;letter-spacing:.4px;text-transform:uppercase;margin-bottom:22px}
+.weave .line::before,.weave .line::after{content:"";display:block;width:46px;height:1px;background:var(--border)}
+
+/* ---- support page ---- */
+.support-intro{max-width:600px;margin:0 auto 56px;text-align:center}
+.support-intro .heading{margin-top:12px}
+.support-intro .lead{margin-top:16px}
+.support-section{margin-top:56px}
+.support-section:first-of-type{margin-top:0}
+.support-head{max-width:var(--measure);margin:0 auto 24px;text-align:center}
+.support-head h2{font-family:var(--font-serif);font-weight:400;font-size:25px;color:var(--text);margin-top:8px}
+.support-head .sub{margin-top:8px;color:var(--text-muted);font-size:15px}
+.support-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(258px,1fr));gap:20px;max-width:var(--max);margin:0 auto}
+.s-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:28px 26px;display:flex;flex-direction:column}
+.s-card.feature{border-color:var(--gold)}
+.s-card .kicker{text-transform:uppercase;letter-spacing:1.4px;font-size:11px;font-weight:600;color:var(--text-light);margin-bottom:12px}
+.s-card h3{font-family:var(--font-serif);font-weight:400;font-size:20px;color:var(--forest);margin-bottom:10px}
+.s-card p{font-size:14.5px;line-height:1.65;color:var(--text-muted);flex:1;margin-bottom:20px}
+.s-card .btns{display:flex;gap:10px;flex-wrap:wrap}
+.s-card .s-note{margin-top:10px;font-size:11.5px;color:var(--text-light);letter-spacing:.2px}
+.btn-sm{padding:11px 20px;font-size:13px}
+
+/* ---- long story (bio) ---- */
+.story{max-width:var(--measure);margin:0 auto}
+.story .heading{font-size:34px;margin-top:14px;margin-bottom:8px}
+.story p{font-size:18px;line-height:1.9;color:var(--text);margin-top:22px}
+.story p.muted{color:var(--text-muted)}
+.story .portrait{width:128px;height:128px;border-radius:50%;margin-bottom:26px}
+.back-row{margin-top:44px}
+
+/* ---- personal footer with branded social tiles ---- */
+.foot{background:var(--forest);color:var(--on-dark-muted);padding:52px 0 44px}
+.foot-inner{max-width:var(--max);margin:0 auto;padding:0 28px;display:flex;flex-direction:column;align-items:center;gap:24px;text-align:center}
+.social-tiles{display:flex;gap:16px;flex-wrap:wrap;justify-content:center}
+.social-tile{display:flex;flex-direction:column;align-items:center;gap:8px;width:74px;color:var(--on-dark-muted)}
+.social-tile .ico{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;background:rgba(250,247,240,.07);border:1px solid rgba(250,247,240,.12);transition:all .16s ease}
+.social-tile .ico svg{width:24px;height:24px;color:var(--on-dark)}
+.social-tile span{font-size:11px;letter-spacing:.4px;font-weight:500}
+.social-tile:hover{color:var(--on-dark)}
+.social-tile:hover .ico{transform:translateY(-2px)}
+.social-tile.ig:hover .ico{background:#E1306C;border-color:#E1306C}
+.social-tile.nostr:hover .ico{background:#8E30EB;border-color:#8E30EB}
+.social-tile.x:hover .ico{background:#000;border-color:#000}
+.social-tile.yt:hover .ico{background:#FF0000;border-color:#FF0000}
+.foot-meta{font-size:13px;color:var(--on-dark-muted)}
+.foot-meta a{color:var(--on-dark-muted)}
+.foot-meta a:hover{color:var(--gold-soft)}
